@@ -1,0 +1,125 @@
+.body-b {
+    background-image: url(https://wallpapers.com/images/hd/red-and-black-background-tsx7n87ejbnj3rvt.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.navbar-fondo {
+    background-image: url(https://images.unsplash.com/flagged/photo-1593005510509-d05b264f1c9c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-brand.texto-personalizado {
+    color: #cccccc;
+    font-weight: bold;
+    font-size:30px;
+    text-shadow: rgb(0, 0, 0) 4px 2px 2px;
+}
+
+
+.navbar-toggler.toggler-personalizado{
+    color: #000000ff;
+    background-color: #960f0f;
+    
+}
+
+.nav-link.texto-personalizado {
+    color: #ebebeb;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.838) 2px 2px 2px;
+  }
+
+
+.img-publicidad {
+    height: 40rem;
+}
+
+.text-publicidad {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 90%; 
+    height: auto;
+}
+
+.cardfondo {
+    background-image: url(https://i.pinimg.com/564x/98/cf/ae/98cfae8868ff13529846af22c628ef24.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 15px; 
+    margin: 10px; 
+
+}
+
+.cardtext {
+    color: #f8f9fa;
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.838) 3px 0px 1px;
+}
+
+.cardtext2 {
+    color: #f8f9fa;
+    font-size: 30px;
+    text-shadow: rgba(0, 0, 0, 0.838) 3px 0px 1px;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.row {
+    gap: 1px; 
+}
+
+.modal-f.modal-content{
+    background-image: url(https://i.pinimg.com/564x/78/23/8c/78238c6b35a968fea274e1816ac17ae5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    text-shadow: rgba(0, 0, 0, 0.838) 1px 1px 5px;
+    font-size: 20px;
+}
+
+.btn-modal{
+    position: absolute;
+    left: 10px;
+}
+
+.modal-title{
+    font-size: 30px;
+    text-shadow: rgba(0, 0, 0, 0.838) 1px 1px 5px;
+}
+
+.total-container {
+    background-color: #c81919a5;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-back{
+    background-color: #960f0fa7;
+    background-size: cover;
+}
+
+.footer-img{
+    position: relative;
+    width: 15%; 
+    height: auto;
+    left: 40%;
+}
+.footer-img2{
+    padding: 10px;
+    position: relative;
+    width: 5%; 
+    height: auto;
+    left: 65%;
+    cursor: pointer;
+}
+
