@@ -57,7 +57,7 @@
 
 .cardtext {
     color: #f8f9fa;
-    font-size: 20px;
+    font-size: 18px;
     text-shadow: rgba(0, 0, 0, 0.838) 3px 0px 1px;
 }
 
@@ -66,12 +66,21 @@
     font-size: 30px;
     text-shadow: rgba(0, 0, 0, 0.838) 3px 0px 1px;
     text-align: center;
-    padding: 20px;
+    font-weight: bold;
+    padding: 5%;
+}
+
+.cardtext1{
+    color: #f8f9fa;
+    font-size: 30px;
+    text-shadow: rgba(0, 0, 0, 0.838) 3px 0px 1px;
+    text-align: center;
+    padding: 25px;
     font-weight: bold;
 }
 
 .row {
-    gap: 1px; 
+    gap: 5px; 
 }
 
 .modal-f.modal-content{
