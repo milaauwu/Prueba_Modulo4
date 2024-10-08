@@ -38,14 +38,14 @@ function actualizarCarrito() {
 
         // Creo la fila
         const fila = document.createElement('div');
-        fila.classList.add('carrito-item', 'd-flex', 'align-items-center', 'table');
+        fila.classList.add('carrito-item', 'd-flex', 'align-items-center');
 
         // creo la celda Producto
         const celdaProducto = document.createElement('span');
         celdaProducto.classList.add( 'col-5')
         celdaProducto.textContent = producto.nombre;
         fila.appendChild(celdaProducto);
-
+        
         // Crea el campo de entrada
         const inputCantidad = document.createElement('input');
         inputCantidad.type = 'number';
