@@ -135,25 +135,43 @@
 
 
   <!-- carrito -->
-  <section class="container mt-5 ">
-    <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-f modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="carritoModalLabel">Carrito</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn-modal btn btn-outline-primary ">Finalizar compra</button>
-            <!-- boton sin funcion -->
-            <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Seguir viendo</button>
+    <section class="container mt-5 ">
+      <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-f modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="carritoModalLabel">Carrito</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn-modal btn btn-outline-primary">Finalizar compra</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Modal total final -->
+<section class="container">
+  <div class="modal fade" id="totalModal" tabindex="-1" aria-labelledby="totalModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-f2 modal-header">
+                  <h5 class="modal-title" id="totalModalLabel">Carrito</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-f2 modal-body">
+                  <p id="totalFinalText"></p>
+              </div>
+              <div class="modal-f2">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 
   <!-- footer -->
   <footer class="footer-back">

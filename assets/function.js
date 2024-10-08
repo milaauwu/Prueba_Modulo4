@@ -26,7 +26,6 @@ document.querySelectorAll('.btnAgregarCarrito').forEach(btn => {
     });
 });
 
-// Actualizar el carrito en la tabla
 function actualizarCarrito() {
     const modalBody = document.getElementById('carritoModal').querySelector('.modal-body');
     modalBody.innerHTML = '';
@@ -39,20 +38,41 @@ function actualizarCarrito() {
 
         // Creo la fila, y le agrego clases
         const fila = document.createElement('div');
-        fila.classList.add('carrito-item', 'd-flex', 'justify-content-between', 'align-items-center', 'p-3');
+        fila.classList.add('carrito-item', 'd-flex', 'justify-content-between', 'align-items-center');
 
         // creo la celda Producto
         const celdaProducto = document.createElement('span');
+        celdaProducto.classList.add('p-3')
         celdaProducto.textContent = producto.nombre;
         fila.appendChild(celdaProducto);
 
-        // creo la celda Cantidad
-        const celdaCantidad = document.createElement('span');
-        celdaCantidad.textContent = cantidadTotalProducto;
-        fila.appendChild(celdaCantidad);
+        // Crea el campo de entrada
+        const inputCantidad = document.createElement('input');
+        inputCantidad.type = 'number';
+        inputCantidad.classList.add('input-cantidad'); 
+        inputCantidad.value = cantidadTotalProducto;
+        inputCantidad.min = '1'; 
+        // actualizar la cantidad en el carrito
+        inputCantidad.addEventListener('change', (e) => {
+            const nuevaCantidad = parseInt(e.target.value);
+            const itemIndex = carrito.findIndex(item => item.producto === producto);
+
+            //se modifica la cantidad actualiza el carrito
+            if (itemIndex > -1) {
+                carrito[itemIndex].cantidad = nuevaCantidad; // Cambia la cantidad en el carrito
+                if (nuevaCantidad <= 0) {
+                    carrito.splice(itemIndex, 1);
+                }
+            }
+            actualizarCarrito(); 
+        });
+
+        // Añade el campo de entrada a la fila
+        fila.appendChild(inputCantidad);
 
         // creo la celda precio
         const celdaPrecio = document.createElement('span');
+        celdaPrecio.classList.add()
         celdaPrecio.textContent = `$${(producto.precio * cantidadTotalProducto).toLocaleString('de-DE')}`;
         fila.appendChild(celdaPrecio);
 
@@ -85,3 +105,34 @@ function actualizarCarrito() {
     totalElement.textContent = `Total: $${total.toLocaleString('de-DE')}`;
     modalBody.appendChild(totalElement);
 }
+
+// finalizar compra
+const btnFinalizar = document.querySelector('.btn-modal');
+btnFinalizar.addEventListener('click', function() {
+    let totalFinal = 0;
+
+    // Calcular el total
+    carrito.forEach(item => {
+        totalFinal += item.producto.precio * item.cantidad;
+    });
+
+    // Mostrar el total en el nuevo modal
+    const totalFinalText = document.getElementById('totalFinalText');
+    totalFinalText.textContent = `Total a pagar: $${totalFinal.toLocaleString('de-DE')}`;
+
+    // Mostrar el modal de total
+    const totalModal = new bootstrap.Modal(document.getElementById('totalModal'));
+    totalModal.show();
+});
+
+// Resetear el carrito
+document.getElementById('totalModal').addEventListener('hidden.bs.modal', function() {
+    carrito = []; // Vaciar el carrito
+    actualizarCarrito(); // Actualizar el carrito
+
+   // Cerrar el modal
+   const carritoModal = bootstrap.Modal.getInstance(document.getElementById('carritoModal'));
+   if (carritoModal) {
+       carritoModal.hide(); // Cerrar el modal de carrito
+   }
+});
