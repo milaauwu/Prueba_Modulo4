@@ -36,13 +36,13 @@ function actualizarCarrito() {
     productosUnicos.forEach((producto) => {
         const cantidadTotalProducto = carrito.reduce((acc, item) => item.producto === producto ? acc + item.cantidad : acc, 0);
 
-        // Creo la fila, y le agrego clases
+        // Creo la fila
         const fila = document.createElement('div');
-        fila.classList.add('carrito-item', 'd-flex', 'justify-content-between', 'align-items-center');
+        fila.classList.add('carrito-item', 'd-flex', 'align-items-center', 'table');
 
         // creo la celda Producto
         const celdaProducto = document.createElement('span');
-        celdaProducto.classList.add('p-3')
+        celdaProducto.classList.add( 'col-5')
         celdaProducto.textContent = producto.nombre;
         fila.appendChild(celdaProducto);
 
@@ -72,13 +72,13 @@ function actualizarCarrito() {
 
         // creo la celda precio
         const celdaPrecio = document.createElement('span');
-        celdaPrecio.classList.add()
+        celdaPrecio.classList.add('col')
         celdaPrecio.textContent = `$${(producto.precio * cantidadTotalProducto).toLocaleString('de-DE')}`;
         fila.appendChild(celdaPrecio);
 
         // Botón eliminar
         const btnEliminar = document.createElement('button');
-        btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
+        btnEliminar.classList.add('btn', 'btn-danger', 'btn-md',);
         btnEliminar.textContent = 'Eliminar';
         btnEliminar.addEventListener('click', () => {
             const itemIndex = carrito.findIndex(item => item.producto === producto);
